@@ -28,6 +28,33 @@ Raw Skewed Features ─────┼──> [Age] ───> np.sqrt ───
 │                                                   │
 └──> [Custom] ──> Python Fnc ─> FunctionTransformer ──┘
 
+```text
+                 ┌───────────────────────────────┐
+                 │      Raw Skewed Features      │
+                 └───────────────────────────────┘
+                                │
+        ┌───────────────────────┼────────────────────────┐
+        │                       │                        │
+        ▼                       ▼                        ▼
+
+   [Fare Column]           [Age Column]         [Custom Feature]
+        │                       │                        │
+        ▼                       ▼                        ▼
+
+     np.log1p               np.sqrt              Custom Python Func
+        │                       │                        │
+        ▼                       ▼                        ▼
+
+ FunctionTransformer    FunctionTransformer    FunctionTransformer
+        │                       │                        │
+        └───────────────────────┼────────────────────────┘
+                                ▼
+
+                 ┌───────────────────────────────┐
+                 │   Balanced Training Matrix    │
+                 └───────────────────────────────┘
+```
+
 
 ---
 
