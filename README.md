@@ -22,8 +22,8 @@ When a dataset contains heavily skewed distributions, applying non-linear mathem
 The `FunctionTransformer` works by converting an arbitrary python callable or numpy mathematical function into a Scikit-Learn transformer object. This allows it to natively expose `.fit()`, `.transform()`, and `.fit_transform()` methods, granting it seamless entry into pipeline orchestrations.
 
 
-                         ┌──> [Fare] ──> np.log1p ───> FunctionTransformer  -──┐
-                         │                                                     │
+   ┌──> [Fare] ──> np.log1p ───> FunctionTransformer  -──┐
+   │                                                     │
 Raw Skewed Features ─────┼──> [Age] ───> np.sqrt ────> FunctionTransformer   ──┼──> Balanced Training Matrix
                          │                                                     │
                          └──> [Custom] ──> Python Fnc ─> FunctionTransformer ──┘
